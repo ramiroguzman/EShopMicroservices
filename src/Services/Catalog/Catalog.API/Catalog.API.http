@@ -1,0 +1,41 @@
+// add a variable to store the base URL
+@catalog_url = http://localhost:5000
+@basket_url = http://localhost:5001
+@ordering_url = http://localhost:5002
+
+POST {{catalog_url}}/products
+Content-Type: application/json
+
+{
+  "Name": "Product 1",
+  "Category": ["Category 1", "Category 2"],
+  "Description": "Description 1",
+  "ImageFile": "image1.png",
+  "Price": 100.00
+}
+###
+// add code to GET all products using the GET method and the @catalog_url variable 
+
+GET {{catalog_url}}/products
+
+###
+
+GET {{catalog_url}}/products/category/Category 2
+
+###
+
+PUT {{catalog_url}}/products
+Content-Type: application/json
+
+{
+  "Id": "01926a5f-2a16-4d24-ae6f-0c1164fd9a40",
+  "Name": "",
+  "Categories": ["Cat1", "Cat2"],
+  "Description": "Description 1",
+  "ImageFile": "image1.png",
+  "Price": 200.00
+}
+
+###
+DELETE {{catalog_url}}/products/01925dec-d551-44bd-839a-12f036416697
+###
